@@ -1,0 +1,78 @@
+.lineup {
+    background-color: $azul;
+    padding: $separacion 0;
+    h3,
+    p {
+        text-align: center;
+        color: $blanco;
+    }
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion/3 0;
+        font-size: 3rem;
+    }
+}
+
+.escenario {
+    margin-bottom: 2rem;
+}
+
+.escenarios-contenedor {
+    @include tablet {
+        @include grid(2, $separacion)
+    }
+    .nombre-escenario {
+        font-size: 2rem;
+        font-weight: $thin;
+        margin: 0;
+        padding: 1.5rem 0;
+        &:after {
+            content: '';
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;
+            // background-color: $azul;
+            background-position: center center;
+            background-size: 4rem;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.grunge .nombre-escenario {
+    &:after {
+        background-image: url(../../../build/img/icono_grunge.webp);
+    }
+}
+
+.rock .nombre-escenario {
+    &:after {
+        background-image: url(../../../build/img/icono_rock.webp);
+        background-size: 8rem;
+    }
+}
+
+.calendario {
+    padding: 0;
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 0;
+    li {
+        padding: $separacion / 3;
+        font-weight: bold;
+    }
+    span {
+        font-weight: $regular;
+        font-size: 2rem;
+        padding-left: 1rem;
+    }
+}
+
+.bg-rosa .calendario li:nth-child(odd) {
+    background-color: darken($color: $rosa, $amount: 10)
+}
+
+.bg-violeta .calendario li:nth-child(odd) {
+    background-color: darken($color: $violeta, $amount: 10)
+}
